@@ -438,7 +438,8 @@ class QrPainter extends CustomPainter {
         : false;
   }
 
-  Rect _createDataModuleRect(_PaintMetrics paintMetrics, int x, int y, num gap) {
+  Rect _createDataModuleRect(_PaintMetrics paintMetrics,
+   int x, int y, num gap) {
     final left = paintMetrics.inset + (x * (paintMetrics.pixelSize + gap));
     final top = paintMetrics.inset + (y * (paintMetrics.pixelSize + gap));
     var pixelHTweak = 0.0;
@@ -687,7 +688,8 @@ class _PaintMetrics {
   void _calculateMetrics() {
     final gapTotal = (moduleCount - 1) * gapSize;
     final pixelSize = (containerSize - gapTotal) / moduleCount;
-    _pixelSize = (pixelSize * 2).roundToDouble() / 2;
+    // _pixelSize = (pixelSize * 2).roundToDouble() / 2;
+      _pixelSize = pixelSize;
     _innerContentSize = (_pixelSize * moduleCount) + gapTotal;
     _inset = (containerSize - _innerContentSize) / 2;
   }

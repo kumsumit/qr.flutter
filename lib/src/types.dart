@@ -5,7 +5,6 @@
  */
 
 import 'package:flutter/widgets.dart';
-import 'dart:ui';
 
 
 /// Represents a specific element / part of a QR code. This is used to isolate
@@ -136,8 +135,8 @@ class QrDataModuleStyle {
   double get outsideBorderRadius {
     if(roundedOutsideCorners) {
       return _outsideBorderRadius != null
-          && _outsideBorderRadius! < borderRadius
-          ? _outsideBorderRadius! : borderRadius;
+          && _outsideBorderRadius < borderRadius
+          ? _outsideBorderRadius : borderRadius;
     }
     return 0;
   }
