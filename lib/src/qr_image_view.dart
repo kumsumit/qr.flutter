@@ -25,8 +25,6 @@ class QrImageView extends StatefulWidget {
     this.size,
     this.padding = const EdgeInsets.all(10.0),
     this.backgroundColor = Colors.transparent,
-    @Deprecated('use colors in eyeStyle and dataModuleStyle instead')
-    this.foregroundColor = Colors.black,
     this.version = QrVersions.auto,
     this.errorCorrectionLevel = QrErrorCorrectLevel.L,
     this.errorStateBuilder,
@@ -58,8 +56,6 @@ class QrImageView extends StatefulWidget {
     this.size,
     this.padding = const EdgeInsets.all(10.0),
     this.backgroundColor = Colors.transparent,
-    @Deprecated('use colors in eyeStyle and dataModuleStyle instead')
-    this.foregroundColor = Colors.black,
     this.version = QrVersions.auto,
     this.errorCorrectionLevel = QrErrorCorrectLevel.L,
     this.errorStateBuilder,
@@ -93,10 +89,6 @@ class QrImageView extends StatefulWidget {
 
   /// The background color of the final QR code widget.
   final Color backgroundColor;
-
-  /// The foreground color of the final QR code widget.
-  @Deprecated('use colors in eyeStyle and dataModuleStyle instead')
-  final Color foregroundColor;
 
   /// The gradient for all (dataModule and eye)
   final Gradient? gradient;
@@ -220,8 +212,6 @@ class _QrImageViewState extends State<QrImageView> {
   Widget _qrWidget(ui.Image? image, double edgeLength) {
     final painter = QrPainter.withQr(
       qr: _qr!,
-      // ignore: deprecated_member_use_from_same_package
-      color: widget.foregroundColor,
       gapless: widget.gapless,
       embeddedImageStyle: widget.embeddedImageStyle,
       embeddedImage: image,
